@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# vi:ts=2 sw=2 tw=79 et lbr wrap
+# Copyright 2018-present David Rabkin
+# This script renames files in given directory by specific rules.
+
+require 'pidfile'
+require_relative '../lib/renamr'
+
+PidFile.new
+Renamr::Renamer.new.do
