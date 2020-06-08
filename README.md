@@ -12,7 +12,7 @@ orginize multiple files.
 
 ## Installation
 The tool is designed to work on macOS, GNU/Linux, Windows, Unix-like OS. It is
-packaged as a Gem and require Ruby version 2.3 or later.  See «[Installing
+packaged as a Gem and require Ruby version 2.4 or later.  See «[Installing
 Ruby](https://www.ruby-lang.org/en/documentation/installation/)» if you don't
 have the proper version on your platform.
 
@@ -49,5 +49,5 @@ It renames all files in `source` by default pattern: 26 English letters,
 10 numbers, minus for spaces and other symbols.
 
 ## License
-Transcode is copyright [David Rabkin](http://www.rabkin.co.il/) and
+Renamr is copyright [David Rabkin](http://www.rabkin.co.il/) and
 available under a [2-Claus BSD license](https://github.com/rdavid/renamr/blob/master/LICENSE).
