@@ -4,5 +4,5 @@
 # Copyright 2018-present David Rabkin
 
 module Renamr
-  VERSION = '1.0.2'
+  VERSION = '1.0.3'
 end
