@@ -6,5 +6,6 @@
 task default: %w[test]
 
 task :test do
-  # ruby 'test/unittest.rb'
+  ruby 'test/test_char.rb'
+  ruby 'test/test_trim.rb'
 end
