@@ -19,7 +19,7 @@ Version](https://badge.fury.io/rb/renamr.svg)](https://badge.fury.io/rb/renamr)
 * [License](#license)
 
 ## About
-Hi, I'm [David Rabkin](https://www.rabkin.co.il). I created this tool to
+Hi, I'm [David Rabkin](http://davi.drabk.in). I created this tool to
 orginize multiple files.
 
 ## Installation
@@ -61,5 +61,5 @@ It renames all files in `source` by default pattern: 26 English letters,
 10 numbers, minus for spaces and other symbols.
 
 ## License
-Renamr is copyright [David Rabkin](http://www.rabkin.co.il/) and
+Renamr is copyright [David Rabkin](http://davi.drabk.in) and
 available under a [2-Claus BSD license](https://github.com/rdavid/renamr/blob/master/LICENSE).
