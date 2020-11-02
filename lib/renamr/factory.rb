@@ -6,6 +6,7 @@
 require_relative 'ascii_validator'
 require_relative 'auto_localization'
 require_relative 'char'
+require_relative 'date'
 require_relative 'downcase'
 require_relative 'existence'
 require_relative 'manual_localization'
@@ -28,7 +29,7 @@ module Renamr
       @cfg = cfg
     end
 
-    def produce(dir) # rubocop:disable MethodLength, AbcSize
+    def produce(dir) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       if @cfg.lim?
         [
           OmitAction.new(LIMIT),
@@ -49,7 +50,8 @@ module Renamr
           ASCIIValidatorAction.new,
           TrimAction.new,
           TruncateAction.new(LIMIT),
-          ExistenceAction.new(dir, LIMIT)
+          DateAction.new,
+          ExistenceAction.new(dir, LIMIT) # Should be the last.
         ].compact
       end
     end

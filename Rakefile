@@ -7,5 +7,6 @@ task default: %w[test]
 
 task :test do
   ruby 'test/test_char.rb'
+  ruby 'test/test_date.rb'
   ruby 'test/test_trim.rb'
 end
