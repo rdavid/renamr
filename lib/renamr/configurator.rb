@@ -20,15 +20,23 @@ module Renamr
       ['-w', '--wid wid', 'Width of the table.',         :wid]
     ].freeze
 
+    def add(opt)
+      opt.on('-c', '--cut pos,len', Array, 'Removes symbols from pos.') do |l|
+        @options[:pos] = l[0]
+        @options[:len] = l[1]
+      end
+      opt.on('-v', '--version', 'Show version.') do
+        puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
+        exit
+      end
+    end
+
     def initialize
       @options = {}
       OptionParser.new do |o|
         o.banner = "Usage: #{File.basename($PROGRAM_NAME)} [options]."
         DIC.each { |f, p, d, k| o.on(f, p, d) { |i| @options[k] = i } }
-        o.on('-c', '--cut pos,len', Array, 'Removes symbols from pos.') do |l|
-          @options[:pos] = l[0]
-          @options[:len] = l[1]
-        end
+        add(o)
       end.parse!
       validate
     end

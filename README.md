@@ -52,6 +52,7 @@ There are no requirements.
       -p, --pre pre                    A string to prepend to.
       -w, --wid wid                    Width of the table.
       -c, --cut pos,len                Removes symbols from pos.
+      -v, --version                    Shows version.
 
 ### Example
 
