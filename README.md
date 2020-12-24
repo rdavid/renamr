@@ -10,7 +10,7 @@ Version](https://badge.fury.io/rb/renamr.svg)](https://badge.fury.io/rb/renamr)
 [![Maintainability](https://api.codeclimate.com/v1/badges/406f1433b0b9e0509a6e/maintainability)](https://codeclimate.com/github/rdavid/renamr/maintainability)
 
 [![Hits-of-Code](https://hitsofcode.com/github/rdavid/renamr)](https://hitsofcode.com/view/github/rdavid/renamr)
-[![License](https://img.shields.io/github/license/rdavid/renamr)](https://github.com/rdavid/renamr/blob/master/LICENSE.txt)
+[![License](https://img.shields.io/badge/license-0BSD-green)](https://github.com/rdavid/renamr/blob/master/LICENSE)
 
 
 * [About](#about)
@@ -63,4 +63,4 @@ It renames all files in `source` by default pattern: 26 English letters,
 
 ## License
 Renamr is copyright [David Rabkin](http://davi.drabk.in) and
-available under a [2-Claus BSD license](https://github.com/rdavid/renamr/blob/master/LICENSE).
+available under a [Zero-Clause BSD license](https://github.com/rdavid/renamr/blob/master/LICENSE).

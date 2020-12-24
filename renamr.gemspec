@@ -13,13 +13,13 @@ Gem::Specification.new do |s|
   s.description = <<-HERE
     Renamr organises multiple files and directories.
   HERE
-  s.license = 'BSD-2-Clause'
+  s.license = '0BSD'
   s.author = 'David Rabkin'
-  s.email = 'pub@rabkin.co.il'
+  s.email = 'david@rabkin.co.il'
   s.homepage = 'https://github.com/rdavid/renamr'
   s.files = Dir['{bin,lib}/**/*'] + Dir['[A-Z]*'] + ['renamr.gemspec']
   s.executables = ['renamr']
-  s.extra_rdoc_files = ['LICENSE.txt', 'README.md']
+  s.extra_rdoc_files = ['LICENSE', 'README.md']
   s.require_paths = ['lib']
   s.add_runtime_dependency 'date', '2.0.0'
   s.add_runtime_dependency 'fileutils', '1.4.1'
