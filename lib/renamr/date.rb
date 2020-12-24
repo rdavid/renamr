@@ -22,12 +22,11 @@ module Renamr
 
     def date(sub)
       PAT.each do |pat|
-        begin
-          return Date.strptime(sub, pat)
-        rescue ArgumentError
-          # Nothing to do.
-        end
+        return Date.strptime(sub, pat)
+      rescue ArgumentError
+        # Nothing to do.
       end
+      nil
     end
 
     def do(src)
