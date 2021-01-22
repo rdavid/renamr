@@ -16,7 +16,7 @@ module Renamr
       @fac = ActionsFactory.new(@cfg)
     end
 
-    def move(dir, dat) # rubocop:disable MethodLength, AbcSize
+    def move(dir, dat) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       rep = Reporter.new(File.expand_path(dir))
       dat.each do |src, dst|
         if src == dst
@@ -35,12 +35,14 @@ module Renamr
       rep.do
     end
 
-    def do_dir(dir) # rubocop:disable MethodLength, CyclomaticComplexity, AbcSize
+    def do_dir(dir) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
       raise "No such directory: #{dir}." unless File.directory?(dir)
 
       dat = []
       act = @fac.produce(dir)
-      (Dir.entries(dir) - ['.', '..']).sort.each do |nme|
+      # Doesn't include hidden files.
+      Dir.entries(dir).reject { |f| f.start_with?('.') }.sort.each do |nme|
+        p nme
         src = File.join(dir, nme)
         do_dir(src) if @cfg.rec? && File.directory?(src)
         act.each { |a| a.set(nme) }
