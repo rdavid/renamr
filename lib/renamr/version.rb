@@ -4,6 +4,6 @@
 # Copyright 2020 by David Rabkin
 
 module Renamr
-  VERSION = '1.0.7'
-  DATE = '2021-01-03'
+  VERSION = '1.0.9'
+  DATE = '2021-03-03'
 end
