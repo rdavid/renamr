@@ -24,7 +24,7 @@ module Renamr
           next
         end
         begin
-          FileUtils.mv(src, dst) if @cfg.act?
+          File.rename(src, dst) if @cfg.act?
           rep.add(File.basename(src), File.basename(dst))
         rescue StandardError => e
           rep.add(File.basename(src), e)
@@ -35,6 +35,18 @@ module Renamr
       rep.do
     end
 
+    def unique(dat, nme)
+      dst = []
+      dat.each { |_, d| dst << File.basename(d) }
+      return nme unless dst.include?(nme)
+
+      ext = File.extname(nme)
+      0.step do |i| # Infinitive loop with index.
+        n = ext.nil? ? "#{nme}-#{i}" : "#{File.basename(nme, ext)}-#{i}#{ext}"
+        return n unless dst.include?(n)
+      end
+    end
+
     def do_dir(dir) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
       raise "No such directory: #{dir}." unless File.directory?(dir)
 
@@ -42,12 +54,14 @@ module Renamr
       act = @fac.produce(dir)
       # Doesn't include hidden files.
       Dir.entries(dir).reject { |f| f.start_with?('.') }.sort.each do |nme|
-        p nme
         src = File.join(dir, nme)
         do_dir(src) if @cfg.rec? && File.directory?(src)
         act.each { |a| a.set(nme) }
-        act.each { |a| break if (nme = a.do(nme)).nil? }
-        dat << [src, File.join(dir, nme)] unless nme.nil?
+        act.each { |a| break if (nme = a.do(nme)).nil? } # rubocop:disable Style/CombinableLoops
+        next if nme.nil?
+
+        nme = unique(dat, nme)
+        dat << [src, File.join(dir, nme)]
       end
       move(dir, dat) if dat.any?
     end

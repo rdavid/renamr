@@ -8,7 +8,6 @@ require_relative 'auto_localization'
 require_relative 'char'
 require_relative 'date'
 require_relative 'downcase'
-require_relative 'existence'
 require_relative 'manual_localization'
 require_relative 'omit'
 require_relative 'point'
@@ -50,8 +49,7 @@ module Renamr
           ASCIIValidatorAction.new,
           TrimAction.new,
           TruncateAction.new(LIMIT),
-          DateAction.new,
-          ExistenceAction.new(dir, LIMIT) # Should be the last.
+          DateAction.new
         ].compact
       end
     end
