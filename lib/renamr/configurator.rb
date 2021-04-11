@@ -16,19 +16,34 @@ module Renamr
       ['-d', '--dir dir', 'Directory to rename.',        :dir],
       ['-s', '--src src', 'A string to substitute.',     :src],
       ['-t', '--dst dst', 'A string to replace to.',     :dst],
-      ['-p', '--pre pre', 'A string to prepend to.',     :pre],
       ['-w', '--wid wid', 'Width of the table.',         :wid]
     ].freeze
 
-    def add(opt)
+    def add_cut(opt)
       opt.on('-c', '--cut pos,len', Array, 'Removes symbols from pos.') do |l|
         @options[:pos] = l[0]
         @options[:len] = l[1]
       end
+    end
+
+    def add_prepend(opt)
+      opt.on('-p', '--prepend str,beg', Array, 'Prepend a string.') do |l|
+        @options[:pre] = l[0]
+        @options[:beg] = l[1].nil? ? 0 : l[1].to_i
+      end
+    end
+
+    def add_version(opt)
       opt.on('-v', '--version', 'Show version.') do
         puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
         exit
       end
+    end
+
+    def add(opt)
+      add_cut(opt)
+      add_prepend(opt)
+      add_version(opt)
     end
 
     def initialize
@@ -82,6 +97,10 @@ module Renamr
 
     def pre
       @options[:pre]
+    end
+
+    def beg
+      @options[:beg]
     end
 
     def pos

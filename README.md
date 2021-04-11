@@ -49,9 +49,9 @@ There are no requirements.
       -d, --dir dir                    Directory to rename.
       -s, --src src                    A string to substitute.
       -t, --dst dst                    A string to replace to.
-      -p, --pre pre                    A string to prepend to.
       -w, --wid wid                    Width of the table.
-      -c, --cut pos,len                Removes symbols from pos.
+      -p, --pre str,beg                A string to prepend to started from beg.
+      -c, --cut pos,len                Removes len symbols from pos.
       -v, --version                    Shows version.
 
 ### Example

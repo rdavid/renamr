@@ -8,14 +8,16 @@ require_relative 'action'
 module Renamr
   # Prepends user patter.
   class PrependAction < Action
-    def initialize(pat)
-      raise 'pat cannot be nil.' if pat.nil?
+    def initialize(beg, pre) # rubocop:disable Lint/MissingSuper
+      raise 'beg cannot be nil.' if beg.nil?
+      raise 'ins cannot be nil.' if pre.nil?
 
-      @pat = pat
+      @beg = beg
+      @pre = pre
     end
 
     def do(src)
-      src.prepend(@pat)
+      src.insert(@beg, @pre)
     end
   end
 end

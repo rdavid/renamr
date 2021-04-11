@@ -45,7 +45,7 @@ module Renamr
           RuToEnAction.new,
           AutoLocalizationAction.new,
           @cfg.mod? ? PrependDateAction.new(dir) : nil,
-          @cfg.pre.nil? ? nil : PrependAction.new(@cfg.pre),
+          @cfg.pre.nil? ? nil : PrependAction.new(@cfg.beg, @cfg.pre),
           ASCIIValidatorAction.new,
           TrimAction.new,
           TruncateAction.new(LIMIT),
