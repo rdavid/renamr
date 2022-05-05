@@ -1,17 +1,5 @@
-# Renamr
+# Renamr [![Build Status](https://travis-ci.org/rdavid/renamr.svg)](https://travis-ci.org/rdavid/renamr) [![Build status](https://ci.appveyor.com/api/projects/status/cca9iog230smu3k2?svg=true)](https://ci.appveyor.com/project/rdavid/renamr) [![Gem Version](https://badge.fury.io/rb/renamr.svg)](https://badge.fury.io/rb/renamr) [![Maintainability](https://api.codeclimate.com/v1/badges/406f1433b0b9e0509a6e/maintainability)](https://codeclimate.com/github/rdavid/renamr/maintainability) [![Hits-of-Code](https://hitsofcode.com/github/rdavid/renamr)](https://hitsofcode.com/view/github/rdavid/renamr) [![License](https://img.shields.io/badge/license-0BSD-green)](https://github.com/rdavid/renamr/blob/master/LICENSE)
 File and directory names organizer.
-
-[![Build
-Status](https://travis-ci.org/rdavid/renamr.svg)](https://travis-ci.org/rdavid/renamr)
-[![Build
-status](https://ci.appveyor.com/api/projects/status/cca9iog230smu3k2?svg=true)](https://ci.appveyor.com/project/rdavid/renamr)
-[![Gem
-Version](https://badge.fury.io/rb/renamr.svg)](https://badge.fury.io/rb/renamr)
-[![Maintainability](https://api.codeclimate.com/v1/badges/406f1433b0b9e0509a6e/maintainability)](https://codeclimate.com/github/rdavid/renamr/maintainability)
-
-[![Hits-of-Code](https://hitsofcode.com/github/rdavid/renamr)](https://hitsofcode.com/view/github/rdavid/renamr)
-[![License](https://img.shields.io/badge/license-0BSD-green)](https://github.com/rdavid/renamr/blob/master/LICENSE)
-
 
 * [About](#about)
 * [Installation](#installation)
