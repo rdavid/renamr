@@ -17,35 +17,36 @@ Ruby](https://www.ruby-lang.org/en/documentation/installation/)” if you don't
 have the proper version on your platform.
 
 Use this command to install:
-
-    gem install renamr
-
+```sh
+gem install renamr
+```
 ### Updating
 Use this command to update the package:
-
-    gem update renamr
-
+```sh
+gem update renamr
+```
 ### Requirements
 There are no requirements.
 
 ## Usage
-    renamr [options]
-      -a, --act                        Real renaming.
-      -r, --rec                        Passes recursively.
-      -l, --lim                        Limits name length.
-      -m, --mod                        Prepends modification time.
-      -d, --dir dir                    Directory to rename.
-      -s, --src src                    A string to substitute.
-      -t, --dst dst                    A string to replace to.
-      -w, --wid wid                    Width of the table.
-      -p, --pre str,beg                A string to prepend to started from beg.
-      -c, --cut pos,len                Removes len symbols from pos.
-      -v, --version                    Shows version.
-
+```sh
+renamr [options]
+	-a, --act                        Real renaming.
+	-r, --rec                        Passes recursively.
+	-l, --lim                        Limits name length.
+	-m, --mod                        Prepends modification time.
+	-d, --dir dir                    Directory to rename.
+	-s, --src src                    A string to substitute.
+	-t, --dst dst                    A string to replace to.
+	-w, --wid wid                    Width of the table.
+	-p, --pre str,beg                A string to prepend to started from beg.
+	-c, --cut pos,len                Removes len symbols from pos.
+	-v, --version                    Shows version.
+```
 ### Example
-
-    renamr -d <source>
-
+```sh
+renamr -d <source>
+```
 It renames all files in `source` by default pattern: 26 English letters,
 10 numbers, minus for spaces and other symbols.
 
