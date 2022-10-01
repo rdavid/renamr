@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# Copyright 2018-2021 by David Rabkin
+# Copyright 2018-2021 David Rabkin
 
 require_relative 'ascii_validator'
 require_relative 'auto_localization'
