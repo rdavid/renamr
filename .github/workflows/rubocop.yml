@@ -1,27 +1,16 @@
 ---
 name: rubocop
-"on":
-  push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
+'on': [push]
 jobs:
   rubocop:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # If running on a self-hosted runner, check it meets the requirements
-      # listed at https://github.com/ruby/setup-ruby#using-self-hosted-runners
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@f20f1eae726df008313d2e0d78c5e602562a1bcf
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@f20f1eae726df008313d2e0d78c5e602562a1bcf
         with:
           ruby-version: 2.6
-
-      # This step is not necessary if you add the gem to your Gemfile
       - name: Install Code Scanning integration
         run: bundle add code-scanning-rubocop --version 0.3.0 --skip-install
       - name: Install dependencies
