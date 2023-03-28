@@ -28,5 +28,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'terminal-table', '1.8.0'
   s.add_development_dependency 'minitest', '6.11.3'
   s.add_development_dependency 'rake', '13.0.1'
-  s.add_development_dependency 'rubocop', '0.85.1'
+  s.add_development_dependency 'rubocop', '1.42.0'
 end
