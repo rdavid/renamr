@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.add_runtime_dependency 'date', '2.0.0'
   s.add_runtime_dependency 'fileutils', '1.4.1'
-  s.add_runtime_dependency 'i18n', '1.8.3'
+  s.add_runtime_dependency 'i18n', '1.12.0'
   s.add_runtime_dependency 'pidfile', '0.3.0'
   s.add_runtime_dependency 'terminal-table', '3.0.2'
   s.add_development_dependency 'minitest', '6.11.3'
