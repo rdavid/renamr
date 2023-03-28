@@ -6,7 +6,7 @@
 source 'https://rubygems.org'
 ruby '~>2.6'
 
-gem 'date', '2.0.0'
+gem 'date', '3.3.3'
 gem 'fileutils', '1.4.1'
 gem 'i18n', '1.8.3'
 gem 'minitest', '5.11.3'
