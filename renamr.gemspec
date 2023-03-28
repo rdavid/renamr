@@ -27,6 +27,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'pidfile', '0.3.0'
   s.add_runtime_dependency 'terminal-table', '3.0.2'
   s.add_development_dependency 'minitest', '6.11.3'
-  s.add_development_dependency 'rake', '13.0.1'
+  s.add_development_dependency 'rake', '13.0.6'
   s.add_development_dependency 'rubocop', '0.85.1'
 end
