@@ -7,7 +7,7 @@ source 'https://rubygems.org'
 ruby '~>2.6'
 
 gem 'date', '2.0.0'
-gem 'fileutils', '1.4.1'
+gem 'fileutils', '1.7.0'
 gem 'i18n', '1.8.3'
 gem 'minitest', '5.18.0'
 gem 'pidfile', '0.3.0'
