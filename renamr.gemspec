@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ['LICENSE', 'README.md']
   s.require_paths = ['lib']
   s.add_runtime_dependency 'date', '2.0.0'
-  s.add_runtime_dependency 'fileutils', '1.4.1'
+  s.add_runtime_dependency 'fileutils', '1.7.0'
   s.add_runtime_dependency 'i18n', '1.8.3'
   s.add_runtime_dependency 'pidfile', '0.3.0'
   s.add_runtime_dependency 'terminal-table', '3.0.2'
