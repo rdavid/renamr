@@ -14,7 +14,7 @@ jobs:
         with:
           ruby-version: 2.6
       - name: Install Code Scanning integration
-        run: bundle add code-scanning-rubocop --version 0.3.0 --skip-install
+        run: bundle add code-scanning-rubocop --version 0.6.1 --skip-install
       - name: Install dependencies
         run: bundle install
       - name: Rubocop run
