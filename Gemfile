@@ -3,7 +3,7 @@
 # vi:ts=2 sw=2 tw=79 et lbr wrap
 # Copyright 2020-2023 David Rabkin
 source 'https://rubygems.org'
-ruby '~>2.6'
+ruby '>2.6'
 gem 'date', '~>3.3'
 gem 'fileutils', '~>1.7'
 gem 'i18n', '~>1.12'
