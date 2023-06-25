@@ -64,7 +64,7 @@ module Renamr
 
         @options[:dir] = File.expand_path(dir)
       end
-      raise "Width of the table should exeeds 14 symbols: #{wid}." if wid < 15
+      raise "Width of the table should exceeds 14 symbols: #{wid}." if wid < 15
     end
 
     def act?

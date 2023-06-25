@@ -6,7 +6,7 @@
 require_relative 'action'
 
 module Renamr
-  # All points besides extention are replaced by minus.
+  # All points besides extension are replaced by minus.
   class PointAction < Action
     def initialize(dir)
       raise 'dir cannot be nil.' if dir.nil?
