@@ -4,6 +4,7 @@
 // URLs:
 :url-cv: http://cv.rabkin.co.il
 :url-license: https://github.com/rdavid/renamr/blob/master/LICENSE
+:url-ruby: https://www.ruby-lang.org/en/documentation/installation
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint
 
@@ -24,12 +25,13 @@ toc::[]
 `renamr` organizes file and directory names.
 
 == Installation
+The tool is designed to operate on macOS, GNU/Linux, Windows, and Unix-like
+operating systems.
+It is packaged as a Gem and requires Ruby version 2.6 or later.
+If you do not have the appropriate version on your platform, refer to
+{url-ruby}[Installing Ruby].
 
-The tool is designed to work on macOS, GNU/Linux, Windows, Unix-like OS.
-It is packaged as a Gem and require Ruby version 2.6 or later.
-See "`https://www.ruby-lang.org/en/documentation/installation/[Installing Ruby]`" if you don't have the proper version on your platform.
-
-Use this command to install:
+Utilize this command for installing the package:
 
 [,sh]
 ----
@@ -38,7 +40,7 @@ gem install renamr
 
 == Updating
 
-Use this command to update the package:
+Utilize this command for updating the package:
 
 [,sh]
 ----
