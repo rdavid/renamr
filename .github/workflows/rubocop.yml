@@ -10,7 +10,7 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@fb404b9557c186e349162b0d8efb06e2bc36edea
+      - uses: ruby/setup-ruby@ca041f971d66735f3e5ff1e21cc13e2d51e7e535
         with:
           ruby-version: 2.6
       - name: Install Code Scanning integration
