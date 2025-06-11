@@ -2,7 +2,9 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# Copyright 2018-2024 David Rabkin
+# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
 # This script renames files in given directory by specific rules.
 
 require_relative '../lib/renamr'

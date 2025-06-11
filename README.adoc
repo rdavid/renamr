@@ -4,6 +4,7 @@
 // URLs:
 :url-cv: http://cv.rabkin.co.il
 :url-license: https://github.com/rdavid/renamr/blob/master/LICENSE
+:url-reuse: https://github.com/fsfe/reuse-action
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint

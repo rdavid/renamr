@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# Copyright 2018-2023 David Rabkin
+# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-License-Identifier: 0BSD
 
 module Renamr
   # An interface for actions implementation.
