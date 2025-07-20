@@ -11,6 +11,7 @@ module Renamr
   # Automatic localization.
   class AutoLocalizationAction < Action
     def initialize
+      super
       I18n.config.available_locales = :en
     end
 

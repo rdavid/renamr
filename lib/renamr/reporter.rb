@@ -10,6 +10,7 @@ require_relative 'utils'
 
 module Renamr
   # Formats and prints output data.
+  # rubocop:disable Style/ClassVars
   class Reporter
     @@tim = Timer.new
     @@sta = { moved: 0, unaltered: 0, failed: 0 }
@@ -54,7 +55,7 @@ module Renamr
     def self.stat_out
       out = ''
       @@sta.each do |k, v|
-        out += ' ' + v.to_s + ' ' + k.to_s + ',' if v.positive?
+        out += " #{v} #{k}," if v.positive?
       end
       out.chop
     end
@@ -65,4 +66,5 @@ module Renamr
       puts "| #{msg}#{' ' * (@@ttl - msg.length)} |\n+-#{'-' * @@ttl}-+"
     end
   end
+  # rubocop:enable Style/ClassVars
 end

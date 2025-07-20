@@ -10,6 +10,7 @@ module Renamr
   # All points besides extension are replaced by minus.
   class PointAction < Action
     def initialize(dir)
+      super()
       raise 'dir cannot be nil.' if dir.nil?
 
       @dir = dir

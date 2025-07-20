@@ -38,7 +38,7 @@ module Renamr
 
     def unique(dat, nme)
       dst = []
-      dat.each { |_, d| dst << File.basename(d) }
+      dat.each { |_, d| dst << File.basename(d) } # rubocop:disable Style/HashEachMethods
       return nme unless dst.include?(nme)
 
       ext = File.extname(nme)

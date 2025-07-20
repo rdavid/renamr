@@ -10,6 +10,7 @@ module Renamr
   # Prepends file modification datestamp.
   class PrependDateAction < Action
     def initialize(dir)
+      super
       @dir = dir
     end
 

@@ -10,6 +10,7 @@ module Renamr
   # Substitutes a string with a string.
   class SubstituteAction < Action
     def initialize(src, dst)
+      super
       raise 'src cannot be nil.' if src.nil?
 
       # The action works after PointAction. All points are replaces with minus.

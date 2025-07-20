@@ -15,4 +15,4 @@ gem 'rake', '~>13.0'
 gem 'rubocop', '~>1.50'
 gem 'terminal-table', '~>4.0'
 
-gem "code-scanning-rubocop", "= 0.6.1"
+gem 'code-scanning-rubocop', '= 0.6.1'

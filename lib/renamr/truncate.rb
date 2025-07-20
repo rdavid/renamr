@@ -10,6 +10,7 @@ module Renamr
   # Limits file length.
   class TruncateAction < Action
     def initialize(lim)
+      super()
       raise 'lim cannot be nil.' if lim.nil?
 
       @lim = lim

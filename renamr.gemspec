@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2023-2025 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
-$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/lib')
+$LOAD_PATH.unshift File.expand_path('lib', __dir__)
 
 require 'renamr'
 

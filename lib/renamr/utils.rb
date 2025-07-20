@@ -13,7 +13,7 @@ class Utils
 
       beg = fin = (lim - SEP.length) / 2
       beg -= 1 if lim.odd?
-      src[0..beg] + SEP + src[-fin..-1]
+      src[0..beg] + SEP + src[-fin..]
     end
   end
 end
