@@ -4,16 +4,13 @@
 # SPDX-FileCopyrightText: 2018-2025 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
+require 'ellipsized'
+
 # All methods are static.
 class Utils
   class << self
-    SEP = '~'
     def trim(src, lim)
-      return src if src.length <= lim
-
-      beg = fin = (lim - SEP.length) / 2
-      beg -= 1 if lim.odd?
-      src[0..beg] + SEP + src[-fin..]
+      src.ellipsized(lim, '~', :center)
     end
   end
 end
