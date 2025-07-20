@@ -4,7 +4,6 @@
 # SPDX-FileCopyrightText: 2018-2025 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
-require 'set'
 require_relative 'action'
 
 module Renamr

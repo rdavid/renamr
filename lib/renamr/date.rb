@@ -10,7 +10,7 @@ require_relative 'action'
 module Renamr
   # Replaces any valid date, e.g. 2020-11-02 or 02-11-2020 with 20201102.
   class DateAction < Action
-    REG = /(\d+)-(\d+)-(\d+)/.freeze
+    REG = /(\d+)-(\d+)-(\d+)/
     PAT = ['%m-%d-%Y', '%d-%m-%Y', '%Y-%m-%d', '%Y-%d-%m'].freeze
 
     def validate(dat)

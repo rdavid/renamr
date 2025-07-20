@@ -5,14 +5,12 @@
 # SPDX-License-Identifier: 0BSD
 
 source 'https://rubygems.org'
-ruby '>2.6'
-gem 'date', '~>3.3'
-gem 'fileutils', '~>1.7'
-gem 'i18n', '~>1.12'
-gem 'minitest', '~>5.8'
-gem 'pidfile', '~>0.3'
-gem 'rake', '~>13.0'
-gem 'rubocop', '~>1.50'
-gem 'terminal-table', '~>4.0'
-
-gem 'code-scanning-rubocop', '= 0.6.1'
+gem 'date'
+gem 'ellipsized'
+gem 'fileutils'
+gem 'i18n'
+gem 'minitest'
+gem 'pidfile'
+gem 'rake'
+gem 'rubocop'
+gem 'terminal-table'
