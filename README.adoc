@@ -6,6 +6,7 @@
 :img-hoc: https://hitsofcode.com/github/rdavid/renamr?branch=master&label=hits%20of%20code
 :img-license: https://img.shields.io/github/license/rdavid/renamr?color=blue&labelColor=gray&logo=freebsd&logoColor=lightgray&style=flat
 :img-maintainability: https://api.codeclimate.com/v1/badges/406f1433b0b9e0509a6e/maintainability
+:img-rake: https://github.com/rdavid/renamr/actions/workflows/rake.yml/badge.svg
 :img-rubocop: https://github.com/rdavid/renamr/actions/workflows/rubocop.yml/badge.svg
 :img-style: https://img.shields.io/badge/code_style-rubocop-brightgreen.svg
 :img-test: https://github.com/rdavid/renamr/actions/workflows/test.yml/badge.svg
@@ -14,6 +15,7 @@
 :url-hoc: https://hitsofcode.com/view/github/rdavid/renamr?branch=master
 :url-license: https://github.com/rdavid/renamr/blob/master/LICENSES/0BSD.txt
 :url-maintainability: https://codeclimate.com/github/rdavid/renamr/maintainability
+:url-rake: https://github.com/rdavid/renamr/actions/workflows/rake.yml
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-rubocop: https://github.com/rdavid/renamr/actions/workflows/rubocop.yml
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
@@ -24,9 +26,10 @@
 
 = Renamr
 
+image:{img-rake}[rake,link={url-rake}]
 image:{img-rubocop}[rubocop,link={url-rubocop}]
 image:{img-gem}[gem version,link={url-gem}]
-// image:{img-maintainability}[maintainability,link={url-maintainability}]
+image:{img-maintainability}[maintainability,link={url-maintainability}]
 image:{img-style}[code style,link={url-style}]
 image:{img-test}[test,link={url-test}]
 image:{img-hoc}[hits of code,link={url-hoc}]
