@@ -10,7 +10,7 @@ module Renamr
   # Omits file names shorter than limit.
   class OmitAction < Action
     def initialize(lim)
-      super
+      super()
       raise 'lim cannot be nil.' if lim.nil?
 
       @lim = lim

@@ -10,7 +10,7 @@ module Renamr
   # Removes symbols between left and right positions.
   class RemoveAction < Action
     def initialize(pos, len)
-      super
+      super()
       raise 'len cannot bi nil.' if len.nil?
       raise 'pos cannot be nil.' if pos.nil?
       raise 'pos has to be positive.' unless pos.to_i.positive?
