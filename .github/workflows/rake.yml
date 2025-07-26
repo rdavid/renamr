@@ -12,6 +12,7 @@ name: rake
 jobs:
   rake:
     strategy:
+      fail-fast: false
       matrix:
         os:
           - macos-13
@@ -25,6 +26,7 @@ jobs:
           - 3.2
           - 3.3
           - 3.4
+    name: Rake on ${{ matrix.os }} / Ruby ${{ matrix.ruby }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +34,4 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - run: bundle config set --global path "$(pwd)/vendor/bundle"
-      - run: bundle install --no-color
       - run: bundle exec rake
