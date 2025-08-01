@@ -4,6 +4,8 @@ version = 1
 [[annotations]]
 path = [
 	".gitignore",
+	"renovate.json",
+	"Gemfile.lock",
 	"README.adoc",
 ]
 precedence = "override"
