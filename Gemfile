@@ -11,5 +11,7 @@ gem 'fileutils'
 gem 'i18n'
 gem 'minitest'
 gem 'rake'
-gem 'rubocop'
 gem 'terminal-table'
+group :rubocop do
+  gem 'rubocop'
+end
