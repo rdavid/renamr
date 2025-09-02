@@ -29,16 +29,17 @@ module Renamr
           rep.add(File.basename(src), File.basename(dst))
         rescue StandardError => e
           rep.add(File.basename(src), e)
-          puts e.backtrace.join("\n\t")
-                .sub("\n\t", ": #{e}#{e.class ? " (#{e.class})" : ''}\n\t")
+          msg = ": #{e}"
+          msg += " (#{e.class})" if e.class
+          msg += "\n\t#{e.backtrace.join("\n\t")}"
+          puts msg
         end
       end
       rep.do
     end
 
     def unique(dat, nme)
-      dst = []
-      dat.each { |_, d| dst << File.basename(d) } # rubocop:disable Style/HashEachMethods
+      dst = dat.map { |_, d| File.basename(d) }
       return nme unless dst.include?(nme)
 
       ext = File.extname(nme)

@@ -22,7 +22,7 @@ module Renamr
     def do(src)
       return src[@len..] if @pos == 1
 
-      src[0..@pos - 1] + src[@pos + @len..]
+      src[0..(@pos - 1)] + src[(@pos + @len)..]
     end
   end
 end

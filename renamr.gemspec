@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>=3.2'
   s.name = 'renamr'
   s.version = Renamr::VERSION
-  s.date = Renamr::DATE
   s.summary = 'File and directory names organiser'
   s.description = <<-HERE
     Renamr organises multiple files and directories.

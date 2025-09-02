@@ -35,11 +35,11 @@ class Timer
   def humanize(sec)
     return 'less than a second' if sec < 1
 
-    DIC.map do |cnt, nms, nm1|
+    DIC.filter_map do |cnt, nms, nm1|
       next if sec <= 0
 
       sec, n = sec.divmod(cnt)
-      "#{n.to_i} #{n.to_i != 1 ? nms : nm1}"
-    end.compact.reverse.join(' ')
+      "#{n.to_i} #{n.to_i == 1 ? nm1 : nms}"
+    end
   end
 end

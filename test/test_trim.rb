@@ -13,10 +13,10 @@ class TestTrim < Minitest::Test
   end
 
   def test_act
-    assert_equal('-', @act.do('-'.dup))
-    assert_equal('-', @act.do('--'.dup))
-    assert_equal('1', @act.do('1-'.dup))
-    assert_equal('1', @act.do('-1'.dup))
-    assert_equal('1-1', @act.do('-1--1-'.dup))
+    assert_equal('-', @act.do(+'-'))
+    assert_equal('-', @act.do(+'--'))
+    assert_equal('1', @act.do(+'1-'))
+    assert_equal('1', @act.do(+'-1'))
+    assert_equal('1-1', @act.do(+'-1--1-'))
   end
 end

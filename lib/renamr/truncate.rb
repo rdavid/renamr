@@ -21,7 +21,7 @@ module Renamr
 
       ext = File.extname(src)
       len = ext.length
-      dst = len >= @lim ? ext[0..@lim - 1] : src[0..@lim - 1 - len] << ext
+      dst = len >= @lim ? ext[0..(@lim - 1)] : src[0..(@lim - 1 - len)] << ext
       dst.gsub!(/-$/, '')
       dst.gsub!('-.', '.')
       dst

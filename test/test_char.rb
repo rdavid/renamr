@@ -14,6 +14,6 @@ class TestChar < Minitest::Test
 
   def test_act
     assert_equal('-' * 32,
-                 @act.do(' (){},~–\'![]_#@=„“”"`—+‘’;·‡«»%…'.dup))
+                 @act.do(+' (){},~–\'![]_#@=„“”"`—+‘’;·‡«»%…'))
   end
 end

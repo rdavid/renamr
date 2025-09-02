@@ -9,17 +9,17 @@ require_relative 'action'
 module Renamr
   # Manual localization.
   class ManualLocalizationAction < Action
-    SRC = 'ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđ'\
-          'ÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏ'\
-          'ìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅ'\
-          'ņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝ'\
-          'ŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝ'\
+    SRC = 'ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđ' \
+          'ÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏ' \
+          'ìíîïĨĩĪīĬĭĮįİıĴĵĶķĸĹĺĻļĽľĿŀŁłÑñŃńŅ' \
+          'ņŇňŉŊŋÒÓÔÕÖØòóôõöøŌōŎŏŐőŔŕŖŗŘřŚśŜŝ' \
+          'ŞşŠšſŢţŤťŦŧÙÚÛÜùúûüŨũŪūŬŭŮůŰűŲųŴŵÝ' \
           'ýÿŶŷŸŹźŻżŽž'
-    DST = 'AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDd'\
-          'EEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIII'\
-          'iiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnN'\
-          'nNnnNnOOOOOOooooooOoOoOoRrRrRrSsSs'\
-          'SsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwY'\
+    DST = 'AAAAAAaaaaaaAaAaAaCcCcCcCcCcDdDdDd' \
+          'EEEEeeeeEeEeEeEeEeGgGgGgGgHhHhIIII' \
+          'iiiiIiIiIiIiIiJjKkkLlLlLlLlLlNnNnN' \
+          'nNnnNnOOOOOOooooooOoOoOoRrRrRrSsSs' \
+          'SsSssTtTtTtUUUUuuuuUuUuUuUuUuUuWwY' \
           'yyYyYZzZzZz'
 
     def do(src)

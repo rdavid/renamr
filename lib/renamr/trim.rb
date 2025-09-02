@@ -10,7 +10,7 @@ module Renamr
   # Replaces multiple minuses to single. Trims minuses.
   class TrimAction < Action
     def do(src)
-      src.gsub!(/-+/, '-')
+      src.squeeze!('-')
       src.gsub!('-.', '.')
       src.gsub!('.-', '.')
       src.gsub!(/^-|-$/, '') unless src == '-'
