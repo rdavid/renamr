@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require 'ellipsized'
 
-# All methods are static.
+# Utility methods.
 class Utils
   class << self
     def trim(src, lim)
@@ -15,7 +15,7 @@ class Utils
   end
 end
 
-# Returns string with humanized time interval.
+# Returns a human-readable time interval.
 class Timer
   DIC = [
     [60,   :seconds, :second],

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require 'fileutils'
@@ -10,7 +10,7 @@ require_relative 'factory'
 require_relative 'reporter'
 
 module Renamr
-  # Renames file by certain rules.
+  # Renames files using configured rules.
   class Renamer
     def initialize
       @cfg = Configurator.new
@@ -43,7 +43,7 @@ module Renamr
       return nme unless dst.include?(nme)
 
       ext = File.extname(nme)
-      0.step do |i| # Infinitive loop with index.
+      0.step do |i| # Infinite loop with an index.
         n = ext.nil? ? "#{nme}-#{i}" : "#{File.basename(nme, ext)}-#{i}#{ext}"
         return n unless dst.include?(n)
       end
@@ -54,7 +54,7 @@ module Renamr
 
       dat = []
       act = @fac.produce(dir)
-      # Doesn't include hidden files.
+      # Hidden files are excluded.
       Dir.entries(dir).reject { |f| f.start_with?('.') }.sort.each do |nme|
         src = File.join(dir, nme)
         do_dir(src) if @cfg.rec? && File.directory?(src)

@@ -1,14 +1,14 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require 'date'
 require_relative 'action'
 
 module Renamr
-  # Replaces any valid date, e.g. 2020-11-02 or 02-11-2020 with 20201102.
+  # Replaces valid dates (for example, 2020-11-02 or 02-11-2020) with 20201102.
   class DateAction < Action
     REG = /(\d+)-(\d+)-(\d+)/
     PAT = ['%m-%d-%Y', '%d-%m-%Y', '%Y-%m-%d', '%Y-%d-%m'].freeze

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 module Renamr
-  # An interface for actions implementation.
+  # Interface for action implementations.
   class Action
     def do(src)
       raise "Undefined method Action.do is called with #{src}."

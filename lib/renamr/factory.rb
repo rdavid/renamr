@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2018-2025 David Rabkin
+# SPDX-FileCopyrightText: 2018-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require_relative 'ascii_validator'
@@ -21,7 +21,7 @@ require_relative 'trim'
 require_relative 'truncate'
 
 module Renamr
-  # Produces actions for certain directories.
+  # Produces actions for a directory.
   class ActionsFactory
     LIMIT = 143 # Synology eCryptfs limitation.
 
@@ -37,7 +37,7 @@ module Renamr
         ]
       else
         [
-          PointAction.new(dir), # Should be the first.
+          PointAction.new(dir), # Must be first.
           @cfg.pos.nil? ? nil : RemoveAction.new(@cfg.pos, @cfg.len),
           @cfg.src.nil? ? nil : SubstituteAction.new(@cfg.src, @cfg.dst),
           ManualLocalizationAction.new,
