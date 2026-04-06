@@ -43,7 +43,7 @@ It is packaged as a Gem and requires Ruby version 3.2 or later.
 If you do not have the appropriate version on your platform, refer to
 {url-ruby}[Installing Ruby].
 
-Utilize this command for installing the package:
+Install the gem with:
 
 [,sh]
 ----
@@ -52,7 +52,7 @@ gem install renamr
 
 == Updating
 
-Utilize this command for updating the package:
+Update the gem with:
 
 [,sh]
 ----
@@ -84,8 +84,8 @@ renamr [options]
 renamr -d <source>
 ----
 
-It renames all files in `source` by default pattern: 26 English letters, 10
-numbers, minus for spaces and other symbols.
+It renames all files in `source` using the default pattern: 26 English
+letters, 10 digits, and a hyphen for spaces and other symbols.
 
 == License
 

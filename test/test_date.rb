@@ -7,7 +7,7 @@
 require 'minitest/autorun'
 require_relative '../lib/renamr/date'
 
-# Test DateAction class.
+# Tests for DateAction.
 class TestChar < Minitest::Test
   def setup
     @act = Renamr::DateAction.new
