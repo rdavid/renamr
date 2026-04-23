@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Replaces special symbols with minus signs, except `.`, `&`, and `$`.
+  # Replaces special symbols with hyphens, except `.`, `&`, and `$`.
   class CharAction < Action
     SYM = ' (){},~–\'![]_#@=„“”"`—+‘’;·‡«»%…'.chars.to_set.freeze
 

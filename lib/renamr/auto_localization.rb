@@ -8,7 +8,7 @@ require 'i18n'
 require_relative 'action'
 
 module Renamr
-  # Automatic localization using I18n transliteration.
+  # Performs automatic localization using I18n transliteration.
   class AutoLocalizationAction < Action
     def initialize
       super

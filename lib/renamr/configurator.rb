@@ -7,7 +7,7 @@
 require 'optparse'
 
 module Renamr
-  # Handles input parameters.
+  # Parses and validates command-line options.
   class Configurator
     DIC = [
       ['-a', '--act',     'Real renaming.',              :act],
@@ -114,7 +114,8 @@ module Renamr
 
     def wid
       if @options[:wid].nil?
-        # Read the current terminal width.
+
+        # Reads the current terminal width.
         wid = `tput cols`
         wid.to_s.empty? ? 79 : wid.to_i
       else

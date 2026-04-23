@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 module Renamr
-  # Interface for action implementations.
+  # Defines the interface for action implementations.
   class Action
     def do(src)
       raise "Undefined method Action.do is called with #{src}."

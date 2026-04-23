@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Replaces dots with minus signs, except for the file extension separator.
+  # Replaces dots with hyphens, except for the file extension separator.
   class PointAction < Action
     def initialize(dir)
       super()

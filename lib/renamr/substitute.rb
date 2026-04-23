@@ -13,7 +13,7 @@ module Renamr
       super()
       raise 'src cannot be nil.' if src.nil?
 
-      # This action runs after PointAction. All dots are replaced with minus.
+      # This action runs after PointAction, so dots are already hyphens.
       @src = p2m(src)
       @dst = dst.nil? ? '-' : p2m(dst)
     end

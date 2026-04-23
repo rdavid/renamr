@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Manual transliteration map.
+  # Defines a manual transliteration map.
   class ManualLocalizationAction < Action
     SRC = 'ÀÁÂÃÄÅàáâãäåĀāĂăĄąÇçĆćĈĉĊċČčÐðĎďĐđ' \
           'ÈÉÊËèéêëĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħÌÍÎÏ' \

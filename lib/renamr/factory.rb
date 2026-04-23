@@ -21,9 +21,9 @@ require_relative 'trim'
 require_relative 'truncate'
 
 module Renamr
-  # Produces actions for a directory.
+  # Builds an action pipeline for a directory.
   class ActionsFactory
-    LIMIT = 143 # Synology eCryptfs limitation.
+    LIMIT = 143 # Matches the Synology eCryptfs limitation.
 
     def initialize(cfg)
       @cfg = cfg
@@ -37,7 +37,7 @@ module Renamr
         ]
       else
         [
-          PointAction.new(dir), # Must be first.
+          PointAction.new(dir), # Runs first.
           @cfg.pos.nil? ? nil : RemoveAction.new(@cfg.pos, @cfg.len),
           @cfg.src.nil? ? nil : SubstituteAction.new(@cfg.src, @cfg.dst),
           ManualLocalizationAction.new,

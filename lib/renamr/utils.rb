@@ -6,7 +6,7 @@
 
 require 'ellipsized'
 
-# Utility methods.
+# Provides utility methods.
 class Utils
   class << self
     def trim(src, lim)

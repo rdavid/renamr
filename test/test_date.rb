@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 # vi:ts=2 sw=2 tw=79 et lbr wrap
-# SPDX-FileCopyrightText: 2020-2025 David Rabkin
+# SPDX-FileCopyrightText: 2020-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 require 'minitest/autorun'
 require_relative '../lib/renamr/date'
 
-# Tests for DateAction.
+# Defines tests for DateAction.
 class TestChar < Minitest::Test
   def setup
     @act = Renamr::DateAction.new
