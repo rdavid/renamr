@@ -11,7 +11,7 @@ module Renamr
   class PrependAction < Action
     def initialize(beg, pre) # rubocop:disable Lint/MissingSuper
       raise 'beg cannot be nil.' if beg.nil?
-      raise 'ins cannot be nil.' if pre.nil?
+      raise 'pre cannot be nil.' if pre.nil?
 
       @beg = beg
       @pre = pre

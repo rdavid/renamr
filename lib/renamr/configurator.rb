@@ -10,32 +10,32 @@ module Renamr
   # Parses and validates command-line options.
   class Configurator
     DIC = [
-      ['-a', '--act',     'Real renaming.',              :act],
-      ['-r', '--rec',     'Passes recursively.',         :rec],
-      ['-l', '--lim',     'Limits name length.',         :lim],
-      ['-m', '--mod',     'Prepends modification time.', :mod],
-      ['-d', '--dir dir', 'Directory to rename.',        :dir],
-      ['-s', '--src src', 'A string to substitute.',     :src],
-      ['-t', '--dst dst', 'A string to replace to.',     :dst],
-      ['-w', '--wid wid', 'Width of the table.',         :wid]
+      ['-a', '--act',     'Performs actual renaming.',          :act],
+      ['-r', '--rec',     'Processes directories recursively.', :rec],
+      ['-l', '--lim',     'Limits file name length.',           :lim],
+      ['-m', '--mod',     'Prepends file modification time.',   :mod],
+      ['-d', '--dir dir', 'Directory to process.',              :dir],
+      ['-s', '--src src', 'String to replace.',                 :src],
+      ['-t', '--dst dst', 'Replacement string.',                :dst],
+      ['-w', '--wid wid', 'Output table width.',                :wid]
     ].freeze
 
     def add_cut(opt)
-      opt.on('-c', '--cut pos,len', Array, 'Removes symbols from pos.') do |l|
+      opt.on('-c', '--cut pos,len', Array, 'Removes len characters from pos.') do |l|
         @options[:pos] = l[0]
         @options[:len] = l[1]
       end
     end
 
     def add_prepend(opt)
-      opt.on('-p', '--prepend str,beg', Array, 'Prepend a string.') do |l|
+      opt.on('-p', '--prepend str,beg', Array, 'Prepends a string.') do |l|
         @options[:pre] = l[0]
         @options[:beg] = l[1].nil? ? 0 : l[1].to_i
       end
     end
 
     def add_version(opt)
-      opt.on('-v', '--version', 'Show version.') do
+      opt.on('-v', '--version', 'Shows the version.') do
         puts "#{File.basename($PROGRAM_NAME)} #{VERSION} #{DATE}"
         exit
       end
@@ -65,7 +65,7 @@ module Renamr
 
         @options[:dir] = File.expand_path(dir)
       end
-      raise "Width of the table should exceeds 14 symbols: #{wid}." if wid < 15
+      raise "Table width must be at least 15 characters: #{wid}." if wid < 15
     end
 
     def act?

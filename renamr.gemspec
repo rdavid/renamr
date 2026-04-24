@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# SPDX-FileCopyrightText: 2023-2025 David Rabkin
+# SPDX-FileCopyrightText: 2023-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 
 $LOAD_PATH.unshift File.expand_path('lib', __dir__)
@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>=3.2'
   s.name = 'renamr'
   s.version = Renamr::VERSION
-  s.summary = 'File and directory names organiser'
+  s.summary = 'File and directory name organizer'
   s.description = <<-HERE
-    Renamr organises multiple files and directories.
+    Renamr renames and normalizes file and directory names.
   HERE
   s.license = '0BSD'
   s.author = 'David Rabkin'

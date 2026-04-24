@@ -11,7 +11,7 @@ module Renamr
   class ASCIIValidatorAction < Action
     def do(src)
       ascii = src.chars.select(&:ascii_only?).join
-      raise "String #{src} has non-ASCII symbols." if src != ascii
+      raise "String #{src} contains non-ASCII characters." if src != ascii
 
       src
     end

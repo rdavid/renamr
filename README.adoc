@@ -1,4 +1,3 @@
-// TODO: remove the line.
 // Settings:
 :toc: macro
 :!toc-title:
@@ -64,17 +63,17 @@ gem update renamr
 [,sh]
 ----
 renamr [options]
-  -a, --act          Real renaming.
-  -r, --rec          Passes recursively.
-  -l, --lim          Limits name length.
-  -m, --mod          Prepends modification time.
-  -d, --dir dir      Directory to rename.
-  -s, --src src      A string to substitute.
-  -t, --dst dst      A string to replace to.
-  -w, --wid wid      Width of the table.
-  -p, --pre str,beg  A string to prepend to started from beg.
-  -c, --cut pos,len  Removes len symbols from pos.
-  -v, --version      Shows version.
+  -a, --act              Performs actual renaming.
+  -r, --rec              Processes directories recursively.
+  -l, --lim              Limits file name length.
+  -m, --mod              Prepends file modification time.
+  -d, --dir dir          Directory to process.
+  -s, --src src          String to replace.
+  -t, --dst dst          Replacement string.
+  -w, --wid wid          Output table width.
+  -p, --prepend str,beg  Prepends a string.
+  -c, --cut pos,len      Removes len characters from pos.
+  -v, --version          Shows the version.
 ----
 
 == Example
@@ -84,8 +83,8 @@ renamr [options]
 renamr -d <source>
 ----
 
-It renames all files in `source` using the default pattern: 26 English
-letters, 10 digits, and a hyphen for spaces and other symbols.
+It renames all files in `source` using the default character set: 26 English
+letters, 10 digits, and hyphens for spaces and other symbols.
 
 == License
 

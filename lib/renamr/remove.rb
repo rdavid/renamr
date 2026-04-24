@@ -11,9 +11,9 @@ module Renamr
   class RemoveAction < Action
     def initialize(pos, len)
       super()
-      raise 'len cannot bi nil.' if len.nil?
+      raise 'len cannot be nil.' if len.nil?
       raise 'pos cannot be nil.' if pos.nil?
-      raise 'pos has to be positive.' unless pos.to_i.positive?
+      raise 'pos must be positive.' unless pos.to_i.positive?
 
       @pos = pos.to_i
       @len = len.to_i
