@@ -64,16 +64,16 @@ gem update renamr
 ----
 renamr [options]
   -a, --act              Performs actual renaming.
-  -r, --rec              Processes directories recursively.
+  -c, --cut pos,len      Removes len characters from pos.
+  -d, --dir dir          Directory to process.
   -l, --lim              Limits file name length.
   -m, --mod              Prepends file modification time.
-  -d, --dir dir          Directory to process.
+  -p, --prepend str,beg  Prepends a string.
+  -r, --rec              Processes directories recursively.
   -s, --src src          String to replace.
   -t, --dst dst          Replacement string.
-  -w, --wid wid          Output table width.
-  -p, --prepend str,beg  Prepends a string.
-  -c, --cut pos,len      Removes len characters from pos.
   -v, --version          Shows the version.
+  -w, --wid wid          Output table width.
 ----
 
 == Example

@@ -11,14 +11,19 @@ module Renamr
   class Configurator
     DIC = [
       ['-a', '--act',     'Performs actual renaming.',          :act],
-      ['-r', '--rec',     'Processes directories recursively.', :rec],
+      ['-d', '--dir dir', 'Directory to process.',              :dir],
       ['-l', '--lim',     'Limits file name length.',           :lim],
       ['-m', '--mod',     'Prepends file modification time.',   :mod],
-      ['-d', '--dir dir', 'Directory to process.',              :dir],
+      ['-r', '--rec',     'Processes directories recursively.', :rec],
       ['-s', '--src src', 'String to replace.',                 :src],
       ['-t', '--dst dst', 'Replacement string.',                :dst],
       ['-w', '--wid wid', 'Output table width.',                :wid]
     ].freeze
+
+    def add_simple(opt, key)
+      f, p, d = DIC.find { |_, _, _, k| k == key }
+      opt.on(f, p, d) { |i| @options[key] = i }
+    end
 
     def add_cut(opt)
       opt.on('-c', '--cut pos,len', Array, 'Removes len characters from pos.') do |l|
@@ -42,16 +47,23 @@ module Renamr
     end
 
     def add(opt)
+      add_simple(opt, :act)
       add_cut(opt)
+      add_simple(opt, :dir)
+      add_simple(opt, :lim)
+      add_simple(opt, :mod)
       add_prepend(opt)
+      add_simple(opt, :rec)
+      add_simple(opt, :src)
+      add_simple(opt, :dst)
       add_version(opt)
+      add_simple(opt, :wid)
     end
 
     def initialize
       @options = {}
       OptionParser.new do |o|
         o.banner = "Usage: #{File.basename($PROGRAM_NAME)} [options]."
-        DIC.each { |f, p, d, k| o.on(f, p, d) { |i| @options[k] = i } }
         add(o)
       end.parse!
       validate
