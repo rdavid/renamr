@@ -64,7 +64,7 @@ gem update renamr
 ----
 renamr [options]
   -a, --act              Performs actual renaming.
-  -c, --cut pos,len      Removes len characters from pos.
+  -c, --cut pos,len      Removes len characters starting at pos.
   -d, --dir dir          Directory to process.
   -l, --lim              Limits file name length.
   -m, --mod              Prepends file modification time.
@@ -88,5 +88,5 @@ letters, 10 digits, and hyphens for spaces and other symbols.
 
 == License
 
-`renamr` is copyright {url-cv}[David Rabkin] and available under a
+`renamr` is copyright {url-cv}[David Rabkin] and is available under the
 {url-license}[Zero-Clause BSD license].
