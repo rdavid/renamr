@@ -12,6 +12,7 @@ module Renamr
     def initialize(pos, len)
       super()
       raise 'len cannot be nil.' if len.nil?
+      raise 'len must be positive.' unless len.to_i.positive?
       raise 'pos cannot be nil.' if pos.nil?
       raise 'pos must be positive.' unless pos.to_i.positive?
 
