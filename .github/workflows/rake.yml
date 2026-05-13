@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 David Rabkin
+# SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 ---
 name: rake
@@ -12,10 +12,14 @@ jobs:
           - macos-14
           - macos-15
           - macos-15-intel
+          - macos-26
+          - macos-26-intel
           - ubuntu-22.04
           - ubuntu-24.04
+          - ubuntu-slim
           - windows-2022
           - windows-2025
+          - windows-2025-vs2026
         ruby:
           - 3.2
           - 3.3
