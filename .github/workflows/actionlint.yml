@@ -12,7 +12,7 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 env:
-  URL: https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash # yamllint disable-line
+  VER: 1.7.12
 jobs:
   actionlint:
     runs-on: ubuntu-24.04
@@ -20,5 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.3
       - id: get
-        run: bash <(curl --silent "$URL")
+        run: |
+          URL=https://raw.githubusercontent.com/rhysd/actionlint/v$VER
+          bash <(curl --silent "$URL/scripts/download-actionlint.bash") "$VER"
       - run: ${{ steps.get.outputs.executable }}
