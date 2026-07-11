@@ -4,19 +4,26 @@
 name: yamllint
 'on':
   pull_request:
+    paths: &paths
+      - .github/**
+      - .rubocop.yml
   push:
     branches: [master]
+    paths: *paths
+  workflow_dispatch:
 permissions:
   contents: read
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   yamllint:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
       - uses: ibiqlik/action-yamllint@v3.1.1
         with:
           file_or_dir: >
