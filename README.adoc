@@ -33,14 +33,15 @@ toc::[]
 
 == About
 
-`renamr` organizes file and directory names.
+`renamr` normalizes file and directory names.
+It rewrites them with lowercase English letters, digits, and hyphens in place
+of spaces and other symbols.
 
 == Installation
-The tool is designed to operate on macOS, GNU/Linux, Windows, and Unix-like
-operating systems.
-It is packaged as a Gem and requires Ruby version 3.2 or later.
-If you do not have the appropriate version on your platform, refer to
-{url-ruby}[Installing Ruby].
+The tool runs on macOS, GNU/Linux, and other Unix-like operating systems, as
+well as Windows.
+It is packaged as a Ruby gem and requires Ruby 3.2 or later.
+If your platform lacks a suitable Ruby, see {url-ruby}[Installing Ruby].
 
 Install the gem with:
 
@@ -83,8 +84,10 @@ renamr [options]
 renamr -d <source>
 ----
 
-It renames all files in `source` using the default character set: 26 English
-letters, 10 digits, and hyphens for spaces and other symbols.
+This previews new names for all files in `source` using the default character
+set: the 26 English letters, 10 digits, and hyphens in place of spaces and
+other symbols.
+Adding `-a` performs the actual renaming.
 
 == License
 
