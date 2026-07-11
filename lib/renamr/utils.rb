@@ -15,7 +15,7 @@ class Utils
   end
 end
 
-# Returns a human-readable time interval.
+# Measures elapsed time and reports it in a human-readable form.
 class Timer
   DIC = [
     [60,   :seconds, :second],

@@ -7,6 +7,7 @@
 require 'minitest/autorun'
 require_relative '../lib/renamr/char'
 
+# Defines tests for CharAction.
 class TestChar < Minitest::Test
   def setup
     @act = Renamr::CharAction.new

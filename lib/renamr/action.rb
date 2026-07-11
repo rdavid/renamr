@@ -8,7 +8,7 @@ module Renamr
   # Defines the interface for action implementations.
   class Action
     def do(src)
-      raise "Undefined method Action.do is called with #{src}."
+      raise "Action.do must be overridden, called with #{src}."
     end
 
     def set(src) end

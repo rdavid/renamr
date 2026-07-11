@@ -7,7 +7,8 @@
 require_relative 'action'
 
 module Renamr
-  # Collapses consecutive hyphens and trims leading/trailing hyphens.
+  # Collapses consecutive hyphens and removes hyphens next to dots and at
+  # the edges.
   class TrimAction < Action
     def do(src)
       src.squeeze!('-')

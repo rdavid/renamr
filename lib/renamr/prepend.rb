@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Prepends a user-provided pattern.
+  # Inserts a user-provided string at the given position.
   class PrependAction < Action
     def initialize(beg, pre) # rubocop:disable Lint/MissingSuper
       raise 'beg cannot be nil.' if beg.nil?

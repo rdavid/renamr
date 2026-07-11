@@ -12,9 +12,11 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>=3.2'
   s.name = 'renamr'
   s.version = Renamr::VERSION
-  s.summary = 'File and directory name organizer'
+  s.summary = 'File and directory name normalizer'
   s.description = <<-HERE
-    Renamr renames and normalizes file and directory names.
+    Renamr normalizes file and directory names. It rewrites them with
+    lowercase English letters, digits, and hyphens in place of spaces and
+    other symbols.
   HERE
   s.license = '0BSD'
   s.author = 'David Rabkin'

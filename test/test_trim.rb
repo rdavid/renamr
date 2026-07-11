@@ -7,6 +7,7 @@
 require 'minitest/autorun'
 require_relative '../lib/renamr/trim'
 
+# Defines tests for TrimAction.
 class TestTrim < Minitest::Test
   def setup
     @act = Renamr::TrimAction.new

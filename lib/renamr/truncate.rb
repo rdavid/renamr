@@ -7,7 +7,8 @@
 require_relative 'action'
 
 module Renamr
-  # Limits file name length.
+  # Truncates file names that exceed the length limit, preserving the
+  # extension.
   class TruncateAction < Action
     def initialize(lim)
       super()
