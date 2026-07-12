@@ -28,7 +28,9 @@ class Timer
       next if sec <= 0
 
       sec, n = sec.divmod(cnt)
+      next if n.to_i.zero?
+
       "#{n.to_i} #{n.to_i == 1 ? nm1 : nms}"
-    end
+    end.reverse.join(' ')
   end
 end

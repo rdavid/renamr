@@ -21,9 +21,7 @@ module Renamr
     end
 
     def do(src)
-      return src[@len..] if @pos == 1
-
-      src[0..(@pos - 1)] + (src[(@pos + @len)..] || '')
+      src[0...(@pos - 1)] + (src[(@pos - 1 + @len)..] || '')
     end
   end
 end

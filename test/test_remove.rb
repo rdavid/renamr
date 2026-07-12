@@ -9,12 +9,10 @@ require_relative '../lib/renamr/remove'
 
 # Defines tests for RemoveAction.
 class TestRemove < Minitest::Test
-  def setup
-    @act = Renamr::RemoveAction.new(1, 2)
-  end
-
   def test_act
-    assert_equal('cdef', @act.do(+'abcdef'))
+    assert_equal('cdef', Renamr::RemoveAction.new(1, 2).do(+'abcdef'))
+    assert_equal('adef', Renamr::RemoveAction.new(2, 2).do(+'abcdef'))
+    assert_equal('abcd', Renamr::RemoveAction.new(5, 9).do(+'abcdef'))
   end
 
   def test_validation
