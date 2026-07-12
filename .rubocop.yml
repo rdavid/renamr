@@ -13,6 +13,8 @@ plugins:
   - rubocop-rake
 Layout/EndOfLine:
   EnforcedStyle: lf
+Layout/LineLength:
+  Max: 79
 Metrics/ClassLength:
   CountAsOne:
     - array

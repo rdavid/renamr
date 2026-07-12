@@ -26,7 +26,8 @@ module Renamr
     end
 
     def add_cut(opt)
-      opt.on('-c', '--cut pos,len', Array, 'Removes len characters starting at pos.') do |l|
+      msg = 'Removes len characters starting at pos.'
+      opt.on('-c', '--cut pos,len', Array, msg) do |l|
         @options[:pos] = l[0]
         @options[:len] = l[1]
       end
