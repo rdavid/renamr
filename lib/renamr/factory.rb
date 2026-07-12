@@ -29,7 +29,7 @@ module Renamr
       @cfg = cfg
     end
 
-    def produce(dir) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    def produce(dir) # rubocop:disable Metrics/AbcSize
       if @cfg.lim?
         [
           OmitAction.new(LIMIT),

@@ -6,6 +6,7 @@
 
 require 'terminal-table'
 require_relative 'action'
+require_relative 'timer'
 require_relative 'utils'
 
 module Renamr

@@ -1,10 +1,9 @@
-# SPDX-FileCopyrightText: 2025 David Rabkin
+# SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 ---
 AllCops:
   Exclude:
     - 'vendor/**/*'
-  DisplayCopNames: true
   TargetRubyVersion: 3.2
   SuggestExtensions: false
   NewCops: enable
@@ -14,3 +13,15 @@ plugins:
   - rubocop-rake
 Layout/EndOfLine:
   EnforcedStyle: lf
+Metrics/ClassLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+    - method_call
+Metrics/MethodLength:
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+    - method_call

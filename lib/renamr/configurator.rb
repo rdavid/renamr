@@ -49,13 +49,9 @@ module Renamr
     def add(opt)
       add_simple(opt, :act)
       add_cut(opt)
-      add_simple(opt, :dir)
-      add_simple(opt, :lim)
-      add_simple(opt, :mod)
+      %i[dir lim mod].each { |k| add_simple(opt, k) }
       add_prepend(opt)
-      add_simple(opt, :rec)
-      add_simple(opt, :src)
-      add_simple(opt, :dst)
+      %i[rec src dst].each { |k| add_simple(opt, k) }
       add_version(opt)
       add_simple(opt, :wid)
     end

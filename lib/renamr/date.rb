@@ -25,7 +25,6 @@ module Renamr
       PAT.each do |pat|
         return Date.strptime(sub, pat)
       rescue ArgumentError
-
         # Tries the next date pattern.
       end
       nil
