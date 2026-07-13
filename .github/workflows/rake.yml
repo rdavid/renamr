@@ -4,8 +4,18 @@
 name: rake
 'on':
   pull_request:
+    paths: &paths
+      - .github/workflows/rake.yml
+      - Gemfile
+      - Gemfile.lock
+      - Rakefile
+      - bin/**
+      - lib/**
+      - renamr.gemspec
+      - test/**
   push:
     branches: [master]
+    paths: *paths
   workflow_dispatch:
 permissions:
   contents: read
@@ -30,17 +40,10 @@ jobs:
           - windows-2025
           - windows-2025-vs2026
         ruby:
-          - 3.2
-          - 3.3
-          - 3.4
-          - 3.5
-        exclude:
-          - os: windows-2022
-            ruby: 3.5
-          - os: windows-2025
-            ruby: 3.5
-          - os: windows-2025-vs2026
-            ruby: 3.5
+          - '3.2'
+          - '3.3'
+          - '3.4'
+          - '4.0'
     name: Rake on ${{ matrix.os }} / Ruby ${{ matrix.ruby }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15

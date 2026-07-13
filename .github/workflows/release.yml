@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+---
+name: release
+'on':
+  push:
+    tags: ['[0-9]+.[0-9]+.[0-9]+']
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7.0.0
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1.316.0
+        with:
+          ruby-version: '3.4'
+      - name: Verify the tag matches the gem version
+        run: |
+          ver="$(ruby -Ilib -rrenamr/version -e 'puts Renamr::VERSION')"
+          test "$ver" = "$GITHUB_REF_NAME"
+      - uses: rubygems/configure-rubygems-credentials@v2.1.0
+      - run: gem build renamr.gemspec
+      - run: gem push "renamr-$GITHUB_REF_NAME.gem"
