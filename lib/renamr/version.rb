@@ -5,6 +5,6 @@
 # SPDX-License-Identifier: 0BSD
 
 module Renamr
-  VERSION = '1.0.16'
-  DATE = '2026-07-12'
+  VERSION = '1.0.17'
+  DATE = '2026-07-13'
 end
