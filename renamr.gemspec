@@ -31,4 +31,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'ellipsized', '~> 0.3'
   s.add_dependency 'i18n', '~> 1.15'
   s.add_dependency 'terminal-table', '~> 4.0'
+  s.add_dependency 'unicode-display_width', '>= 2.4', '< 4'
 end

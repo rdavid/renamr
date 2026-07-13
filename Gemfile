@@ -12,6 +12,7 @@ gem 'i18n'
 gem 'minitest'
 gem 'rake'
 gem 'terminal-table'
+gem 'unicode-display_width'
 group :rubocop do
   gem 'rubocop'
   gem 'rubocop-minitest'

@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: 0BSD
 
 require 'minitest/autorun'
+require 'unicode/display_width'
 require_relative '../lib/renamr/utils'
 
 # Defines tests for Utils.
@@ -12,5 +13,15 @@ class TestUtils < Minitest::Test
   def test_act
     assert_equal('abcde~qrst', Utils.trim('abcdefghijklmnopqrst', 10))
     assert_equal('abc', Utils.trim('abc', 10))
+  end
+
+  def test_wide
+    out = Utils.trim('日本語のとても長いファイル名', 10)
+
+    assert_operator(Unicode::DisplayWidth.of(out), :<=, 10)
+    out = Utils.trim("#{'日本語のとても長いファイル名' * 5}.txt", 64)
+
+    assert_operator(Unicode::DisplayWidth.of(out), :<=, 64)
+    assert_equal('日本語', Utils.trim('日本語', 10))
   end
 end

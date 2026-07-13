@@ -72,6 +72,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rake
   terminal-table
+  unicode-display_width
 
 BUNDLED WITH
    2.6.9
