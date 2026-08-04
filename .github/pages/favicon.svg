@@ -1,0 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 David Rabkin
+SPDX-License-Identifier: 0BSD
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10.2" fill="#2b2b2b" stroke="#f0dfaf" stroke-width="2.2"/>
+  <text x="12" y="17.3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-weight="700" font-size="14.5" fill="#f0dfaf">r</text>
+</svg>
