@@ -11,13 +11,13 @@ module Renamr
   class Configurator
     DIC = [
       ['-a', '--act',     'Performs actual renaming.',          :act],
-      ['-d', '--dir dir', 'Directory to process.',              :dir],
+      ['-d', '--dir dir', 'Sets the directory to process.',     :dir],
       ['-l', '--lim',     'Limits file name length.',           :lim],
       ['-m', '--mod',     'Prepends file modification time.',   :mod],
       ['-r', '--rec',     'Processes directories recursively.', :rec],
-      ['-s', '--src src', 'String to replace.',                 :src],
-      ['-t', '--dst dst', 'Replacement string.',                :dst],
-      ['-w', '--wid wid', 'Output table width.',                :wid]
+      ['-s', '--src src', 'Sets the string to replace.',        :src],
+      ['-t', '--dst dst', 'Sets the replacement string.',       :dst],
+      ['-w', '--wid wid', 'Sets the output table width.',       :wid]
     ].freeze
 
     def add_simple(opt, key)
