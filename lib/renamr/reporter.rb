@@ -11,7 +11,7 @@ require_relative 'utils'
 
 module Renamr
   # Formats and prints rename results.
-  # rubocop:disable Style/ClassVars
+  # rubocop:disable-next Style/ClassVars
   class Reporter
     @@tim = Timer.new
     @@sta = { moved: 0, unaltered: 0, failed: 0 }
@@ -67,5 +67,4 @@ module Renamr
       puts "| #{msg}#{' ' * (@@ttl - msg.length)} |\n+-#{'-' * @@ttl}-+"
     end
   end
-  # rubocop:enable Style/ClassVars
 end
