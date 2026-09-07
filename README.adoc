@@ -52,7 +52,7 @@ endif::[]
 It rewrites them with lowercase English letters, digits, and hyphens in place
 of spaces and other symbols.
 
-== Installation
+== Install
 
 The tool runs on macOS, GNU/Linux, and other Unix-like operating systems, as
 well as Windows.
@@ -75,7 +75,7 @@ Update the gem with:
 gem update renamr
 ----
 
-== Usage
+== Using
 
 [,sh]
 ----
