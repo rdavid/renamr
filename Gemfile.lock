@@ -52,9 +52,9 @@ GEM
     ruby-progressbar (1.13.0)
     terminal-table (4.0.0)
       unicode-display_width (>= 1.1.1, < 4)
-    unicode-display_width (3.2.0)
-      unicode-emoji (~> 4.1)
-    unicode-emoji (4.2.0)
+    unicode-display_width (3.3.0)
+      unicode-emoji (~> 4.3)
+    unicode-emoji (4.3.0)
 
 PLATFORMS
   arm64-darwin-24
