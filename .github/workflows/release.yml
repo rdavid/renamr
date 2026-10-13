@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# Builds and publishes the gem on version tags. The id-token:write
-# permission OIDC-authenticates the push to RubyGems, so no stored
-# credentials are needed. The tests run first, so a failing build is never
-# published.
+# Builds and publishes the gem on version tags. The tests run first, so a
+# failing build is never published. The id-token:write permission
+# authenticates the push to RubyGems with OIDC, so no stored credentials are
+# needed.
 ---
 name: release
 'on':
