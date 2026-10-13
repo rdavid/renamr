@@ -3,7 +3,8 @@
 #
 # Builds and publishes the gem on version tags. The id-token:write
 # permission OIDC-authenticates the push to RubyGems, so no stored
-# credentials are needed.
+# credentials are needed. The tests run first, so a failing build is never
+# published.
 ---
 name: release
 'on':
@@ -11,6 +12,9 @@ name: release
     tags: ['[0-9]+.[0-9]+.[0-9]+']
 permissions:
   contents: read
+concurrency:
+  group: release
+  cancel-in-progress: false
 jobs:
   release:
     runs-on: ubuntu-24.04
@@ -29,6 +33,8 @@ jobs:
         run: |
           ver="$(ruby -Ilib -rrenamr/version -e 'puts Renamr::VERSION')"
           test "$ver" = "$GITHUB_REF_NAME"
+      - run: bundle install
+      - run: bundle exec rake
       - uses: rubygems/configure-rubygems-credentials@v2.1.0
       - run: gem build renamr.gemspec
       - run: gem push "renamr-$GITHUB_REF_NAME.gem"
