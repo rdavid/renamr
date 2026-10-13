@@ -38,24 +38,25 @@ module Renamr
       rep.do
     end
 
+    # Appends an increasing index to the name until it is absent from dat.
     def unique(dat, nme)
       dst = dat.map { |_, d| File.basename(d) }
       return nme unless dst.include?(nme)
 
       ext = File.extname(nme)
-      0.step do |i| # Iterates indefinitely with an index.
+      0.step do |i|
         n = ext.nil? ? "#{nme}-#{i}" : "#{File.basename(nme, ext)}-#{i}#{ext}"
         return n unless dst.include?(n)
       end
     end
 
+    # Skips hidden files and renames the rest of the directory entries.
     def do_dir(dir) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
       raise "No such directory: #{dir}." unless File.directory?(dir)
 
       dat = []
       act = @fac.produce(dir)
 
-      # Skips hidden files.
       Dir.entries(dir).reject { |f| f.start_with?('.') }.sort.each do |nme|
         src = File.join(dir, nme)
         do_dir(src) if @cfg.rec? && File.directory?(src)

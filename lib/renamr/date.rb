@@ -21,11 +21,12 @@ module Renamr
       dat
     end
 
+    # Tries each date pattern in turn and skips to the next on a parse error.
     def date(sub)
       PAT.each do |pat|
         return Date.strptime(sub, pat)
       rescue ArgumentError
-        # Tries the next date pattern.
+        next
       end
       nil
     end

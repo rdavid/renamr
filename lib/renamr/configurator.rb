@@ -121,10 +121,10 @@ module Renamr
       @options[:len]
     end
 
+    # Returns the table width. Defaults to the terminal width, or 79 columns
+    # when the terminal width is unavailable.
     def wid
       if @options[:wid].nil?
-
-        # Reads the current terminal width.
         wid = `tput cols`
         wid.to_s.empty? ? 79 : wid.to_i
       else

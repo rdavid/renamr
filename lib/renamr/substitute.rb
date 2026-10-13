@@ -9,11 +9,12 @@ require_relative 'action'
 module Renamr
   # Replaces one string with another.
   class SubstituteAction < Action
+    # Runs after PointAction, so dots are already hyphens. Converts both
+    # strings accordingly and replaces a missing destination with a hyphen.
     def initialize(src, dst)
       super()
       raise 'src cannot be nil.' if src.nil?
 
-      # This action runs after PointAction, so dots are already hyphens.
       @src = p2m(src)
       @dst = dst.nil? ? '-' : p2m(dst)
     end
