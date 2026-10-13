@@ -7,12 +7,17 @@
 module Renamr
   # Defines the interface for action implementations.
   class Action
+    # Transforms a file name and returns it, or nil to skip the file.
+    # Subclasses must override this method.
     def do(src)
-      raise "Action.do must be overridden, called with #{src}."
+      raise "Subclasses must override Action#do, called with #{src}."
     end
 
+    # Receives the original file name before the pipeline runs. Does nothing
+    # by default.
     def set(src) end
 
+    # Replaces dots with hyphens.
     def p2m(src)
       src.tr('.', '-')
     end

@@ -13,6 +13,7 @@ module Renamr
     REG = /(\d+)-(\d+)-(\d+)/
     PAT = ['%m-%d-%Y', '%d-%m-%Y', '%Y-%m-%d', '%Y-%d-%m'].freeze
 
+    # Returns the date when it is between 1900 and 2099, otherwise nil.
     def validate(dat)
       return nil if dat < Date.new(1900, 1, 1)
 
@@ -21,7 +22,8 @@ module Renamr
       dat
     end
 
-    # Tries each date pattern in turn and skips to the next on a parse error.
+    # Parses sub with each known pattern in turn and returns the first match.
+    # Returns nil when none matches.
     def date(sub)
       PAT.each do |pat|
         return Date.strptime(sub, pat)

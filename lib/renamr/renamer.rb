@@ -17,6 +17,8 @@ module Renamr
       @fac = ActionsFactory.new(@cfg)
     end
 
+    # Renames each source to its destination when the act option is set, then
+    # prints the report. Reports a failure and keeps going on errors.
     def move(dir, dat) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
       rep = Reporter.new(File.expand_path(dir))
       dat.each do |src, dst|

@@ -29,6 +29,7 @@ module Renamr
       @cfg = cfg
     end
 
+    # Returns the ordered actions to apply to every name in dir.
     def produce(dir) # rubocop:disable Metrics/AbcSize
       if @cfg.lim?
         [

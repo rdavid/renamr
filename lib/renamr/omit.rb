@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Skips file names shorter than the limit.
+  # Skips file names shorter than the limit, since they need no truncation.
   class OmitAction < Action
     def initialize(lim)
       super()

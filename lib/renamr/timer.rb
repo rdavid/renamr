@@ -17,10 +17,12 @@ class Timer
     @sta = Time.now
   end
 
+  # Returns the time elapsed since creation as human-readable text.
   def read
     humanize(Time.now - @sta)
   end
 
+  # Converts seconds to text such as 1 hour 1 minute 1 second.
   def humanize(sec)
     return 'less than a second' if sec < 1
 
