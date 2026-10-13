@@ -11,6 +11,7 @@
 :url-gem: https://badge.fury.io/rb/renamr
 :url-github: https://github.com/rdavid/renamr
 :url-hoc: https://hitsofcode.com/view/github/rdavid/renamr?branch=master
+:url-homebrew: https://brew.sh
 :url-license: https://github.com/rdavid/renamr/blob/master/LICENSES/0BSD.txt
 :url-rake: https://github.com/rdavid/renamr/actions/workflows/rake.yml
 :url-reuse: https://github.com/fsfe/reuse-action
@@ -68,6 +69,13 @@ Install the gem with:
 gem install renamr
 ----
 
+Or install it with {url-homebrew}[Homebrew] from the `rdavid/tap` tap:
+
+[,sh]
+----
+brew install rdavid/tap/renamr
+----
+
 == Update
 
 Update the gem with:
@@ -75,6 +83,14 @@ Update the gem with:
 [,sh]
 ----
 gem update renamr
+----
+
+Or, if you installed it with Homebrew:
+
+[,sh]
+----
+brew update
+brew upgrade renamr
 ----
 
 == Usage
