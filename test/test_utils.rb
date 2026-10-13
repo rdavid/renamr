@@ -10,12 +10,12 @@ require_relative '../lib/renamr/utils'
 
 # Defines tests for Utils.
 class TestUtils < Minitest::Test
-  def test_act
+  def test_trim
     assert_equal('abcde~qrst', Utils.trim('abcdefghijklmnopqrst', 10))
     assert_equal('abc', Utils.trim('abc', 10))
   end
 
-  def test_wide
+  def test_trim_wide
     out = Utils.trim('日本語のとても長いファイル名', 10)
 
     assert_operator(Unicode::DisplayWidth.of(out), :<=, 10)
