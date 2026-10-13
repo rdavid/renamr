@@ -16,6 +16,7 @@
 :url-reuse: https://github.com/fsfe/reuse-action
 :url-rubocop: https://github.com/rdavid/renamr/actions/workflows/rubocop.yml
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
+:url-site: https://rdavid.github.io/renamr
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint
 
@@ -51,6 +52,7 @@ endif::[]
 `renamr` normalizes file and directory names.
 It rewrites them with lowercase English letters, digits, and hyphens in place
 of spaces and other symbols.
+ifndef::pages-build[See the {url-site}[project website].]
 
 == Install
 
@@ -66,7 +68,7 @@ Install the gem with:
 gem install renamr
 ----
 
-== Updating
+== Update
 
 Update the gem with:
 
@@ -75,7 +77,7 @@ Update the gem with:
 gem update renamr
 ----
 
-== Using
+== Usage
 
 [,sh]
 ----
