@@ -4,7 +4,8 @@
 # Builds and publishes the gem on version tags. The tests run first, so a
 # failing build is never published. The id-token:write permission
 # authenticates the push to RubyGems with OIDC, so no stored credentials are
-# needed.
+# needed. The contents:write permission lets the last step create a GitHub
+# release with generated notes.
 ---
 name: release
 'on':
@@ -20,7 +21,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
-      contents: read
+      contents: write
       id-token: write
     steps:
       - uses: actions/checkout@v7.0.1
@@ -38,3 +39,10 @@ jobs:
       - uses: rubygems/configure-rubygems-credentials@v2.1.0
       - run: gem build renamr.gemspec
       - run: gem push "renamr-$GITHUB_REF_NAME.gem"
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --generate-notes \
+            --verify-tag \
+            "renamr-$GITHUB_REF_NAME.gem"
