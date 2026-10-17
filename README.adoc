@@ -18,6 +18,7 @@
 :url-rubocop: https://github.com/rdavid/renamr/actions/workflows/rubocop.yml
 :url-ruby: https://www.ruby-lang.org/en/documentation/installation
 :url-site: https://rdavid.github.io/renamr
+:url-tap: https://rdavid.github.io/homebrew-tap
 :url-vale: https://vale.sh
 :url-yamllint: https://github.com/adrienverge/yamllint
 
@@ -69,7 +70,8 @@ Install the gem with:
 gem install renamr
 ----
 
-Or install it with {url-homebrew}[Homebrew] from the `rdavid/tap` tap:
+Or install it with {url-homebrew}[Homebrew] from the
+{url-tap}[rdavid tap]:
 
 [,sh]
 ----
