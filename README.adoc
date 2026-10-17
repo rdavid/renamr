@@ -54,7 +54,7 @@ endif::[]
 `renamr` normalizes file and directory names.
 It rewrites them with lowercase English letters, digits, and hyphens in place
 of spaces and other symbols.
-ifndef::pages-build[See the {url-site}[project website].]
+ifndef::pages-build[The project has a {url-site}[website].]
 
 == Install
 
@@ -76,23 +76,6 @@ Or install it with {url-homebrew}[Homebrew] from the
 [,sh]
 ----
 brew install rdavid/tap/renamr
-----
-
-== Update
-
-Update the gem with:
-
-[,sh]
-----
-gem update renamr
-----
-
-Or, if you installed it with Homebrew:
-
-[,sh]
-----
-brew update
-brew upgrade renamr
 ----
 
 == Usage
