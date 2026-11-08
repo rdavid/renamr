@@ -40,15 +40,23 @@ module Renamr
       rep.do
     end
 
-    # Appends an increasing index to the name until it is absent from dat.
-    def unique(dat, nme)
+    # Returns true when nme is taken in the directory of src. A name is taken
+    # when an earlier source moves to it, which dst lists, or when a file
+    # other than src already has it on disk.
+    def held?(dst, src, nme)
+      pth = File.join(File.dirname(src), nme)
+      dst.include?(nme) || (File.exist?(pth) && !File.identical?(src, pth))
+    end
+
+    # Appends an increasing index to the name until it is no longer taken.
+    def unique(dat, src, nme)
       dst = dat.map { |_, d| File.basename(d) }
-      return nme unless dst.include?(nme)
+      return nme unless held?(dst, src, nme)
 
       ext = File.extname(nme)
       0.step do |i|
-        n = ext.nil? ? "#{nme}-#{i}" : "#{File.basename(nme, ext)}-#{i}#{ext}"
-        return n unless dst.include?(n)
+        n = "#{File.basename(nme, ext)}-#{i}#{ext}"
+        return n unless held?(dst, src, n)
       end
     end
 
@@ -68,7 +76,7 @@ module Renamr
         act.each { |a| break if (nme = a.do(nme)).nil? } # rubocop:disable Style/CombinableLoops
         next if nme.nil?
 
-        nme = unique(dat, nme)
+        nme = unique(dat, src, nme)
         dat << [src, File.join(dir, nme)]
       end
       move(dir, dat) if dat.any?
