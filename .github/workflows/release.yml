@@ -1,11 +1,12 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# Builds and publishes the gem on version tags. The tests run first, so a
-# failing build is never published. The id-token:write permission
-# authenticates the push to RubyGems with OIDC, so no stored credentials are
-# needed. The contents:write permission lets the last step create a GitHub
-# release with generated notes.
+# Builds and publishes the gem on version tags. The test job runs first with
+# read-only permissions, so a failing build is never published and the
+# dependencies never see the release credentials. The publish job installs no
+# dependencies. Its id-token:write permission authenticates the push to
+# RubyGems with OIDC, so no stored credentials are needed. Its contents:write
+# permission lets the last step create a GitHub release with generated notes.
 ---
 name: release
 'on':
@@ -17,12 +18,9 @@ concurrency:
   group: release
   cancel-in-progress: false
 jobs:
-  release:
+  test:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
-    permissions:
-      contents: write
-      id-token: write
     steps:
       - uses: actions/checkout@v7.0.1
         with:
@@ -36,6 +34,20 @@ jobs:
           test "$ver" = "$GITHUB_REF_NAME"
       - run: bundle install
       - run: bundle exec rake
+  publish:
+    needs: test
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1.336.0
+        with:
+          ruby-version: '3.4'
       - uses: rubygems/configure-rubygems-credentials@v2.1.0
       - run: gem build renamr.gemspec
       - run: gem push "renamr-$GITHUB_REF_NAME.gem"
