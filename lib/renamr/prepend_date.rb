@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Prepends the file modification date.
+  # Prepends the file modification date in the YYYYMMDD- form.
   class PrependDateAction < Action
     def initialize(dir)
       super()

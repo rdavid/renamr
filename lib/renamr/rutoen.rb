@@ -7,7 +7,8 @@
 require_relative 'action'
 
 module Renamr
-  # Transliterates Russian to English.
+  # Transliterates Russian letters to Latin. Spells out `$`, `№`, and `&` as
+  # words.
   class RuToEnAction < Action
     MSC = {
       'ё' => 'jo',

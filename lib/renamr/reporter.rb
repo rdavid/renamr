@@ -10,7 +10,9 @@ require_relative 'timer'
 require_relative 'utils'
 
 module Renamr
-  # Formats and prints rename results.
+  # Prints a table of old and new names for each directory and a final
+  # summary line. Keeps the counters in class variables, so the summary covers
+  # every directory.
   # rubocop:disable-next Style/ClassVars
   class Reporter
     @@tim = Timer.new

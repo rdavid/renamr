@@ -7,7 +7,8 @@
 require_relative 'action'
 
 module Renamr
-  # Replaces special symbols with hyphens, except `.`, `&`, and `$`.
+  # Replaces spaces, brackets, quotes, and other punctuation with hyphens.
+  # Leaves `.`, `&`, and `$` for the later actions.
   class CharAction < Action
     SYM = ' (){},~–\'![]_#@=„“”"`—+‘’;·‡«»%…'.chars.to_set.freeze
 

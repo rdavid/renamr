@@ -7,7 +7,8 @@
 require_relative 'action'
 
 module Renamr
-  # Checks whether the resulting string contains only ASCII characters.
+  # Raises an error when a name still holds non-ASCII characters after the
+  # earlier actions. It guards against renaming to an unexpected result.
   class ASCIIValidatorAction < Action
     def do(src)
       ascii = src.chars.select(&:ascii_only?).join

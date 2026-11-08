@@ -7,7 +7,7 @@
 require 'ellipsized'
 require 'unicode/display_width'
 
-# Provides utility methods.
+# Provides helpers for fitting text into the report table.
 class Utils
   class << self
     # Trims src to fit lim terminal columns. Wide characters such as CJK

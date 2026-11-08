@@ -29,7 +29,9 @@ module Renamr
       @cfg = cfg
     end
 
-    # Returns the ordered actions to apply to every name in dir.
+    # Returns the ordered actions to apply to every name in dir. With the lim
+    # option, returns only the actions that shorten long names. Otherwise,
+    # PointAction runs first, while the last dot still marks the extension.
     def produce(dir) # rubocop:disable Metrics/AbcSize
       if @cfg.lim?
         [
@@ -38,7 +40,7 @@ module Renamr
         ]
       else
         [
-          PointAction.new(dir), # Runs first.
+          PointAction.new(dir),
           @cfg.pos.nil? ? nil : RemoveAction.new(@cfg.pos, @cfg.len),
           @cfg.src.nil? ? nil : SubstituteAction.new(@cfg.src, @cfg.dst),
           ManualLocalizationAction.new,

@@ -52,7 +52,9 @@ module Renamr
       end
     end
 
-    # Skips hidden files and renames the rest of the directory entries.
+    # Computes new names for the entries of dir and passes them to move.
+    # Skips hidden entries and the names that an action drops. Descends into
+    # subdirectories when the rec option is set.
     def do_dir(dir) # rubocop:disable Metrics/MethodLength, Metrics/CyclomaticComplexity, Metrics/AbcSize, Metrics/PerceivedComplexity
       raise "No such directory: #{dir}." unless File.directory?(dir)
 

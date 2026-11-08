@@ -8,7 +8,8 @@ require 'i18n'
 require_relative 'action'
 
 module Renamr
-  # Performs automatic localization using I18n transliteration.
+  # Transliterates the remaining non-ASCII characters with I18n. Drops the
+  # characters that I18n cannot convert.
   class AutoLocalizationAction < Action
     def initialize
       super

@@ -7,7 +7,7 @@
 require_relative 'action'
 
 module Renamr
-  # Replaces one string with another.
+  # Replaces every occurrence of one string with another.
   class SubstituteAction < Action
     # Runs after PointAction, so dots are already hyphens. Converts both
     # strings accordingly and replaces a missing destination with a hyphen.
