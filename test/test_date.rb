@@ -21,6 +21,12 @@ class TestDate < Minitest::Test
     assert_equal('4 20201031 bar', @act.do(+'4 2020-31-10 bar'))
   end
 
+  # Checks that an ambiguous date reads as day first.
+  def ambiguous
+    assert_equal('7 20220213 bar', @act.do(+'7 13-02-2022 bar'))
+    assert_equal('8 20220212 bar', @act.do(+'8 12-02-2022 bar'))
+  end
+
   # Checks that text without a valid date stays unchanged.
   def bad
     assert_equal('5 2nd Nov 2020 bar', @act.do(+'5 2nd Nov 2020 bar'))
@@ -29,6 +35,7 @@ class TestDate < Minitest::Test
 
   def test_act
     good
+    ambiguous
     bad
   end
 end

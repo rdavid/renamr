@@ -9,9 +9,10 @@ require_relative 'action'
 
 module Renamr
   # Replaces valid dates (for example, 2020-11-02 or 02-11-2020) with 20201102.
+  # Reads an ambiguous date such as 12-02-2022 as day first.
   class DateAction < Action
     REG = /(\d+)-(\d+)-(\d+)/
-    PAT = ['%m-%d-%Y', '%d-%m-%Y', '%Y-%m-%d', '%Y-%d-%m'].freeze
+    PAT = ['%d-%m-%Y', '%m-%d-%Y', '%Y-%m-%d', '%Y-%d-%m'].freeze
 
     # Returns the date when it is between 1900 and 2099, otherwise nil.
     def validate(dat)

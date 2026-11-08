@@ -63,6 +63,7 @@ characters to English.
 * It replaces spaces, punctuation, and symbols such as `&` and `$` with
 hyphens or words.
 * It rewrites dates such as `2020-11-02` as `20201102`.
+It reads an ambiguous date day first, so `12-02-2022` becomes `20220212`.
 * It trims stray hyphens and keeps file extensions intact.
 * It truncates names to 143 characters to fit encrypted file systems.
 
