@@ -54,6 +54,22 @@ endif::[]
 `renamr` normalizes file and directory names.
 It rewrites them with lowercase English letters, digits, and hyphens in place
 of spaces and other symbols.
+The result is a set of names that are safe to type, sort, and share across
+file systems.
+Each name passes through a pipeline of steps:
+
+* It lowercases letters and transliterates Cyrillic and other accented
+characters to English.
+* It replaces spaces, punctuation, and symbols such as `&` and `$` with
+hyphens or words.
+* It rewrites dates such as `2020-11-02` as `20201102`.
+* It trims stray hyphens and keeps file extensions intact.
+* It truncates names to 143 characters to fit encrypted file systems.
+
+Optional steps cut, replace, or prepend text, add the modification time, and
+walk directories recursively.
+`renamr` only previews the changes by default.
+It renames nothing until you pass `--act`.
 ifndef::pages-build[The project has a {url-site}[website].]
 
 == Install
@@ -96,17 +112,60 @@ renamr [options]
   -w, --wid wid          Sets the output table width.
 ----
 
-== Example
+`renamr` processes the current directory unless `--dir` names another one.
+It prints a table of old and new names and leaves the files untouched:
 
 [,sh]
 ----
-renamr -d <source>
+renamr --dir ~/Downloads
 ----
 
-This previews new names for all files in `source` using the default character
-set: the 26 English letters, 10 digits, and hyphens in place of spaces and
-other symbols.
-Adding `-a` performs the actual renaming.
+[,text]
+----
++--------------------------------------------------------------+
+|                         ~/Downloads                          |
++-------------------------------+------------------------------+
+|              src              |             dst              |
++-------------------------------+------------------------------+
+| IMG 0042 Beach Trip.JPG       | img-0042-beach-trip.jpg      |
+| Meeting Notes 2024-07-15.txt  | meeting-notes-20240715.txt   |
+| Old Photos                    | old-photos                   |
+| Tom & Jerry.mp4               | tom-and-jerry.mp4            |
+| Отчёт за май.docx             | otchjot-za-may.docx          |
++-------------------------------+------------------------------+
+| Test: 5 moved in less than a second.                         |
++--------------------------------------------------------------+
+----
+
+Review the table, then repeat the command with `--act` to apply it:
+
+[,sh]
+----
+renamr --dir ~/Downloads --act
+----
+
+Add `--rec` to descend into subdirectories as well.
+
+The optional steps run before the normalization.
+Each example below shows its result for `IMG 0042 Beach Trip.JPG`:
+
+[,sh]
+----
+# Replaces Beach with Sea, case-sensitively: img-0042-sea-trip.jpg.
+renamr --src Beach --dst Sea
+
+# Removes 4 characters from position 1: 0042-beach-trip.jpg.
+renamr --cut 1,4
+
+# Prepends a string at position 0: 2024-img-0042-beach-trip.jpg.
+renamr --prepend 2024-,0
+
+# Prepends the modification date: 20261108-img-0042-beach-trip.jpg.
+renamr --mod
+
+# Shortens only the names longer than 143 characters.
+renamr --lim
+----
 
 == License
 
