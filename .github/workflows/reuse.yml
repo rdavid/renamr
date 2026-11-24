@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Checks that every file carries copyright and license information under
+# the REUSE specification.
 ---
 name: reuse
 'on':

@@ -17,6 +17,9 @@ permissions:
 concurrency:
   group: release
   cancel-in-progress: false
+defaults:
+  run:
+    shell: sh
 jobs:
   test:
     runs-on: ubuntu-24.04

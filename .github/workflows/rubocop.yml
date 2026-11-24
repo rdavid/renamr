@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2023-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Lints the Ruby code with RuboCop through reviewdog. Pull requests get
+# inline review comments, and pushes get a check run. Needs checks:write and
+# pull-requests:write to post them.
 ---
 name: rubocop
 'on':

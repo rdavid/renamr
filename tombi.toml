@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 David Rabkin
+# SPDX-License-Identifier: 0BSD
+#
+# Keeps the tab indentation of the TOML files.
+[format.rules]
+indent-style = "tab"

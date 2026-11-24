@@ -1,7 +1,8 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
 #
-# Lints the TOML files at the repository root.
+# Lints the TOML files at the repository root and checks their formatting
+# against tombi.toml.
 ---
 name: tombi
 'on':
@@ -18,6 +19,9 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
 jobs:
   tombi:
     runs-on: ubuntu-24.04
@@ -32,4 +36,6 @@ jobs:
           version: 1.11.3
       - run: |
           tombi lint --error-on-warnings \
+            ./*.toml
+          tombi format --check \
             ./*.toml

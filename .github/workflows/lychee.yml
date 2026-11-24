@@ -5,6 +5,7 @@
 # which reads its exclusions from lychee.toml. Runs on every push and pull
 # request with no path filter on purpose. A link can appear in any file.
 # The weekly schedule reports a dead link even when the repository is quiet.
+# The token raises the GitHub rate limit for the many github.com links.
 ---
 name: lychee
 'on':
@@ -39,3 +40,5 @@ jobs:
             renamr.gemspec
           fail: true
           lycheeVersion: v0.24.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

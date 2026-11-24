@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Audits the workflows for security issues with zizmor. Uses the token to
+# look up the pinned actions online.
 ---
 name: zizmor
 'on':
@@ -15,6 +18,9 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
 jobs:
   zizmor:
     runs-on: ubuntu-24.04

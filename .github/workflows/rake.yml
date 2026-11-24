@@ -1,5 +1,9 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Runs the test suite with rake on every supported Ruby across Linux, macOS,
+# and Windows runners. Keeps fail-fast off, so one platform's failure does not
+# hide another's.
 ---
 name: rake
 'on':

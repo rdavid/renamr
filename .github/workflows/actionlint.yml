@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2025-2026 David Rabkin
 # SPDX-License-Identifier: 0BSD
+#
+# Lints the workflows with actionlint, which also runs shellcheck on their
+# run steps. Downloads a pinned release instead of a marketplace action.
 ---
 name: actionlint
 'on':
@@ -15,6 +18,9 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+defaults:
+  run:
+    shell: sh
 jobs:
   actionlint:
     runs-on: ubuntu-24.04
